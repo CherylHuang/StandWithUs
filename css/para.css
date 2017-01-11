@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* Parallax base styles */
+.flomid/*視差圖片置中 mid*/
+{
+	 position: relative;width:1920px;
+	left: 50%;
+	margin-left: -960px;
+	}
+      .parallax {
+        height: 500px; /* fallback for older browsers */
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        -webkit-perspective: 300px;
+        perspective: 300px;
+      }
+      .parallax__group {
+        position: relative;
+        height: 500px; /* fallback for older browsers */
+        height: 100vh;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+      }
+      .parallax__layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+      .parallax__layer--base {
+		   z-index:5;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+      }
+      .parallax__layer--back {
+		   z-index:4;
+        -webkit-transform: translateZ(-300px) scale(2);
+        transform: translateZ(-300px) scale(2);
+      }
+      .parallax__layer--deep {
+		   z-index:3;
+        -webkit-transform: translateZ(-600px) scale(3);
+        transform: translateZ(-600px) scale(3);
+      }
+      .parallax__group {
+        -webkit-transition: -webkit-transform 0.5s;
+        transition: transform 0.5s;
+      }
